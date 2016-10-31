@@ -1,0 +1,63 @@
+{
+  "name": "ModernWiki",
+  "short_name": "ModernWiki",
+
+  "description": "Wikipedia. But modern.",
+  "version": "6.0",
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://*.wikipedia.org/",
+    "https://*.wikimedia.org/",
+    "https://*.wikimediafoundation.org/",
+    "https://*.wiktionary.org/",
+    "https://*.wikinews.org/",
+    "https://*.wikiquote.org/",
+    "https://*.wikisource.org/",
+    "https://*.wikibooks.org/",
+    "https://*.wikidata.org/",
+    "https://*.wikispecies.org/",
+    "https://*.wikiversity.org/",
+    "https://*.wikivoyage.org/",
+    "https://*.mediawiki.org/",
+    "contextMenus",
+    "tabs",
+    "storage"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.wikipedia.org/*"],
+      "js": ["extension/MTDLoad.js"],
+      "css": ["sources/dev.css"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "scripts": ["extension/MTDBackground.js"]
+  },
+
+  "icons": {
+   },
+
+  "web_accessible_resources": [
+    "sources",
+    "sources/*",
+    "sources/MTDinject.js",
+    "sources/moderndeck.css",
+    "sources/moderndeck.min.css",
+    "sources/fonts/Roboto300latinext.woff2",
+    "sources/fonts/Roboto300latin.woff2",
+    "sources/fonts/Roboto400latinext.woff2",
+    "sources/fonts/Roboto400latin.woff2",
+    "sources/fonts/Roboto500latinext.woff2",
+    "sources/fonts/Roboto500latin.woff2",
+    "sources/fonts/MaterialIcons.woff2",
+    "sources/fonts/fontawesome.woff2",
+    "sources/fonts/MaterialIcons.woff2"
+  ],
+
+  "manifest_version": 2
+}

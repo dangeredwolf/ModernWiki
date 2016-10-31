@@ -5,35 +5,9 @@
 console.log("MTDLoad 6.0");
 
 var isDev = true;
-var isApp = typeof require !== "undefined";
 var isChromium = typeof chrome !== "undefined"; // NOTE TO SELF: This probably triggers on Microsoft Edge but idk
-var isSafari = typeof safari !== "undefined";
-var isFirefox = !isChromium && !isSafari && !isApp;
 var storage = {};
-var electron,app,BrowserWindow,mainWindow;
-
-if (isApp) {
-
-  electron = require('electron');
-  app = electron.app;
-  BrowserWindow = electron.BrowserWindow;
-
-  app.on('ready',function(){
-    mainWindow = new BrowserWindow({width: 1280, height: 720, autoHideMenuBar: true, frame:true});
-
-    mainWindow.loadURL('file://' + __dirname + '../../../index.html');
-
-    if (isDev) {
-      mainWindow.webContents.openDevTools();
-    }
-
-    //mainWindow.webContents.executeJavaScript("var links=document.querySelectorAll(\"link[title='dark'],link[title='light']\");for(i=0;i<links.length;i++){links[i].href=\"\"}");
-
-    mainWindow.on('closed', function() {
-      app.quit();
-    });
-  });
-}
+var app,BrowserWindow,mainWindow;
 
 function InjectDevStyles() {
   console.log("*boops your nose* hey there developer :3");
@@ -52,11 +26,11 @@ function InjectDevStyles() {
   injStyles.rel = "stylesheet";
 
   if (isChromium && !isApp) {
-    injStyles.href = chrome.extension.getURL("sources/moderndeck.css");
+    injStyles.href = chrome.extension.getURL("sources/wiki.css");
   } else if (isSafari) {
-    injStyles.href = safari.extension.baseURI + "sources/moderndeck.css";
+    injStyles.href = safari.extension.baseURI + "sources/wiki.css";
   } else if (isFirefox) {
-    injStyles.href = self.options.ffMTDURLExchange + "sources/moderndeck.css";
+    injStyles.href = self.options.ffMTDURLExchange + "sources/wiki.css";
   } else {
     console.log('you done goofed')
   }
