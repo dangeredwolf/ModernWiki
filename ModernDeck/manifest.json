@@ -1,0 +1,81 @@
+{
+  "name": "ModernDeck",
+  "short_name": "ModernDeck",
+
+  "description": "TweetDeck, just more beautiful, colourful, customisable, fast, and fun than ever.",
+  "version": "6.0",
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://*.twitter.com/",
+    "https://ton.twimg.com/",
+    "contextMenus",
+    "tabs",
+    "storage"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://tweetdeck.twitter.com/*"],
+      "js": ["extension/MTDLoad.js"],
+      "css": ["sources/dev.css"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "scripts": ["extension/MTDBackground.js"]
+  },
+
+  "icons": {
+      "16": "AppIcon16.png",
+      "24": "AppIcon24.png",
+      "32": "AppIcon32.png",
+      "48": "AppIcon48.png",
+      "64": "AppIcon64.png"
+   },
+
+  "web_accessible_resources": [
+    "sources",
+    "sources/*",
+    "sources/MTDinject.js",
+    "sources/moderndeck.css",
+    "sources/moderndeck.min.css",
+    "sources/accounts.png",
+    "sources/AddColumn.png",
+    "sources/alert_2.mp3",
+    "sources/BTDsmall.png",
+    "sources/dev.css",
+    "sources/favicon.ico",
+    "sources/KBshortcuts.png",
+    "sources/logout.png",
+    "sources/mtdabout.png",
+    "sources/MTDsmall.png",
+    "sources/TweetDeck.png",
+    "sources/tweetdecksmall.png",
+    "sources/fonts/Roboto300latinext.woff2",
+    "sources/fonts/Roboto300latin.woff2",
+    "sources/fonts/Roboto400latinext.woff2",
+    "sources/fonts/Roboto400latin.woff2",
+    "sources/fonts/Roboto500latinext.woff2",
+    "sources/fonts/Roboto500latin.woff2",
+    "sources/fonts/MaterialIcons.woff2",
+    "sources/fonts/fontawesome.woff2",
+    "sources/fonts/MaterialIcons.woff2"
+  ],
+
+  "browser_action": {
+    "default_icon": "sources/oneclick/InstaTweetDeck.png",
+    "default_popup": "extension/ITD.html",
+    "default_title": "Launch TweetDeck"
+  },
+
+  "manifest_version": 2,
+
+  "applications": {
+     "gecko": {
+          "id": "thejumono@gmail.com"
+     }
+  }
+}

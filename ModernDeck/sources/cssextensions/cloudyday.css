@@ -1,0 +1,11 @@
+/*
+  cloudyday.css
+
+  Copyright 2014-2016 Ryan Dolan (@dangeredwolf)
+  Released under the MIT Licence
+*/
+
+html {
+  -webkit-filter:grayscale(100%);
+  -moz-filter:grayscale(100%)
+}
