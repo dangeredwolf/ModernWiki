@@ -7,7 +7,7 @@ console.log("MTDLoad 6.0");
 var isDev = true;
 var isChromium = typeof chrome !== "undefined"; // NOTE TO SELF: This probably triggers on Microsoft Edge but idk
 var storage = {};
-var app,BrowserWindow,mainWindow;
+var app,BrowserWindow,mainWindow,isFirefox,isSafari;
 
 function InjectDevStyles() {
   console.log("*boops your nose* hey there developer :3");
@@ -25,7 +25,7 @@ function InjectDevStyles() {
   var injStyles = document.createElement("link");
   injStyles.rel = "stylesheet";
 
-  if (isChromium && !isApp) {
+  if (isChromium) {
     injStyles.href = chrome.extension.getURL("sources/wiki.css");
   } else if (isSafari) {
     injStyles.href = safari.extension.baseURI + "sources/wiki.css";
@@ -38,7 +38,7 @@ function InjectDevStyles() {
   document.head.appendChild(injStyles);
 }
 
-if ((!isApp && typeof localStorage.mtd_stylesheet_dev_mode !== "undefined" && localStorage.mtd_stylesheet_dev_mode === "true") || isDev || isFirefox) {
+if ((typeof localStorage.mtd_stylesheet_dev_mode !== "undefined" && localStorage.mtd_stylesheet_dev_mode === "true") || isDev || isFirefox) {
   InjectDevStyles();
 }
 
