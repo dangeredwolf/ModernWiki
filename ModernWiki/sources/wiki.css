@@ -1,0 +1,146 @@
+* {
+  font-family:Roboto
+}
+
+a {
+  color:#2196F3
+}
+
+.mw-editsection-bracket {
+  display:none
+}
+
+#mw-page-base,.catlinks {
+  background:transparent!important
+}
+
+div.vectorTabs li a {
+  color:#000;
+  padding-left:1.5em;
+  padding-right:1.5em
+}
+
+span.mw-editsection a {
+  font-size:0
+}
+
+span.mw-editsection a:after {
+  font-size:18px;
+  font-family:"Material";
+  content:"\e3c9"
+}
+
+li {
+  display:block
+}
+
+.toc .toctoggle {
+  font-size:0
+}
+
+.toc #togglelink {
+  transition:transform 0.3s;
+  display:inline-block
+}
+
+.toc #togglelink:focus {
+  text-decoration:none;
+  outline:none
+}
+
+.toc #togglelink:after {
+  font-size:24px;
+  font-family:"Material";
+  content:"\e316"
+}
+
+.toc.tochidden #togglelink {
+  transform: rotateZ(180deg);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  border-bottom:0
+}
+
+.infobox th,div.NavFrame div.NavHead {
+  font-weight:500
+}
+
+.infobox td {
+  font-weight:400
+}
+
+.catlinks {
+  border:0!important
+}
+
+.catlinks li {
+  border-left:0
+}
+
+#toc, .toc, .mw-warning, .toccolours {
+  border:0;
+  box-shadow:0 3px 8px rgba(0,0,0,0.5);
+  background:#fff
+}
+
+.mw-body #toc h2, .mw-body .toc h2 {
+  vertical-align:middle;
+  font-family:Roboto;
+  font-weight:500
+}
+
+div.vectorTabs li {
+  background:#fff!important;
+  color:#444!important;
+  border-bottom:0 solid transparent;
+  font-weight:500;
+  text-transform:uppercase;
+}
+
+div.vectorTabs li a {
+  color:#444!important
+}
+
+div.vectorTabs li.selected a {
+  color:#2196F3!important
+}
+
+div.vectorTabs li.selected {
+  color:#2196F3!important;
+  border-bottom:4px solid #2196F3
+}
+
+.mw-body {
+  border:0;
+  box-shadow:0 3px 8px rgba(0,0,0,0.5);
+}
+
+.infobox,table.wikitable,table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > * > tr > th, table.wikitable > * > tr > td {
+  border:0!important;
+  padding:0.4em 0.7em
+}
+
+tbody > tr:first-child {
+  box-shadow:0 2px 5px rgba(0,0,0,0.5)
+}
+
+tbody > tr {
+  box-shadow:0 1px 2px rgba(0,0,0,0.5)
+}
+
+.mw-body h3, .mw-body h4 {
+  font-weight:500
+}
+
+.infobox {
+  background:transparent!important
+}
+
+p {
+  line-height:1.8em!important
+}
+
+.infobox th {
+  padding:0.4em
+}
