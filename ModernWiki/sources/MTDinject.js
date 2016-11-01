@@ -10,8 +10,8 @@ function fontParseHelper(a) {
 	if (typeof a !== "object" || a === null)
 		throw "you forgot to pass the object";
 
-	return "@font-face{font-family:'"+(a.family||"Roboto")+"';font-style:"+(a.style||"normal")+";font-weight:"+(a.weight || "300")+";src:url("+MTDBaseURL+"sources/fonts/"+a.name+".woff) format('woff');unicode-range:"+(a.range||
-		"U+0100-024F,U+1E00-1EFF,U+20A0-20CF,U+2C60-2C7F,U+A720-A7FF")+"}";
+	return "@font-face{font-family:'"+(a.family||"Roboto")+"';font-style:"+(a.style||"normal")+";font-weight:"+(a.weight || "300")+";src:url("+MTDBaseURL+"sources/fonts/"+a.name+".woff2) format('woff2');unicode-range:"+(a.range||
+		"U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000")+"}";
 }
 function defineVars() {
   if (typeof $ === "undefined") {
@@ -23,15 +23,23 @@ function defineVars() {
   var body = $(document.body);
   var html = $(document.querySelector("html")); // Only 1 result; faster to find
 
-  $(document.head).append(make("style").html(
-    fontParseHelper({name:"Roboto300latin",range:"U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000"}) +
-    fontParseHelper({name:"Roboto300latinext"}) +
-    fontParseHelper({weight:"400",name:"Roboto400latin",range:"U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000"}) +
-    fontParseHelper({weight:"400",name:"Roboto400latinext"}) +
-    fontParseHelper({weight:"500",name:"Roboto500latin",range:"U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000"}) +
-    fontParseHelper({weight:"500",name:"Roboto500latinext"}) +
-    fontParseHelper({family:"Material",weight:"400",name:"MaterialIcons",range:"U+0000-F000"}) +
-    fontParseHelper({family:"MD",weight:"400",name:"mdvectors",range:"U+E000-FFFF"})
+  $(document.head).append(make("style").html( //"U+0100-024F,U+1E00-1EFF,U+20A0-20CF,U+2C60-2C7F,U+A720-A7FF"
+    fontParseHelper({weight:"100",name:"Roboto100"}) +
+	  fontParseHelper({weight:"100",name:"Roboto100i",style:"italic"}) +
+	  fontParseHelper({weight:"300",name:"Roboto300"}) +
+	  fontParseHelper({weight:"300",name:"Roboto300i",style:"italic"}) +
+    fontParseHelper({weight:"400",name:"Roboto400"}) +
+	  fontParseHelper({weight:"400",name:"Roboto400i",style:"italic"}) +
+    fontParseHelper({weight:"500",name:"Roboto500"}) +
+	  fontParseHelper({weight:"500",name:"Roboto500i",style:"italic"}) +
+    fontParseHelper({weight:"700",name:"Roboto700"}) +
+	  fontParseHelper({weight:"700",name:"Roboto700i",style:"italic"}) +
+	  fontParseHelper({weight:"100",name:"RobotoSlab100",family:"RobotoSlab"}) +
+	  fontParseHelper({weight:"300",name:"RobotoSlab300",family:"RobotoSlab"}) +
+	  fontParseHelper({weight:"400",name:"RobotoSlab400",family:"RobotoSlab"}) +
+	  fontParseHelper({weight:"700",name:"RobotoSlab700",family:"RobotoSlab"}) +
+    fontParseHelper({weight:"400",name:"MaterialIcons",family:"Material",range:"U+0000-F000"}) +
+    fontParseHelper({weight:"400",name:"mdvectors",family:"MD",range:"U+E000-FFFF"})
     // fontParseHelper({family:"Font Awesome",weight:"400",name:"fontawesome",range:"U+0000-F000"})
   ));
 }

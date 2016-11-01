@@ -2,8 +2,12 @@
   font-family:Roboto
 }
 
-a {
+a,.mw-body a.external,div#mw-panel div.portal div.body ul li a,.mw-body a.extiw, .mw-body a.extiw:active {
   color:#2196F3
+}
+
+a:visited,div#mw-panel div.portal div.body ul li a:visited,.mw-body a.extiw:visited {
+	color:#7E57C2
 }
 
 .mw-editsection-bracket {
@@ -93,12 +97,15 @@ h1,h2,h3,h4,h5,h6 {
 div.vectorTabs li {
   background:#fff!important;
   color:#444!important;
-  border-bottom:0 solid transparent;
-  font-weight:500;
-  text-transform:uppercase;
+  border-bottom:0 solid transparent
 }
 
-div.vectorTabs li a {
+div#mw-panel div.portal h3,div.vectorTabs li {
+	font-weight:500;
+	text-transform:uppercase
+}
+
+div.vectorTabs li a,div#mw-panel div.portal h3 {
   color:#444!important
 }
 
@@ -111,9 +118,10 @@ div.vectorTabs li.selected {
   border-bottom:4px solid #2196F3
 }
 
-.mw-body {
+.mw-body,#left-navigation,#right-navigation {
   border:0;
   box-shadow:0 3px 8px rgba(0,0,0,0.5);
+  background:#fff
 }
 
 .infobox,table.wikitable,table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > * > tr > th, table.wikitable > * > tr > td {
@@ -121,11 +129,11 @@ div.vectorTabs li.selected {
   padding:0.4em 0.7em
 }
 
-tbody > tr:first-child {
+tbody > tr:first-child,div.thumbinner {
   box-shadow:0 2px 5px rgba(0,0,0,0.5)
 }
 
-tbody > tr {
+tbody > tr:not([style="height: 2px; display: table-row;"]) {
   box-shadow:0 1px 2px rgba(0,0,0,0.5)
 }
 
@@ -143,4 +151,97 @@ p {
 
 .infobox th {
   padding:0.4em
+}
+
+div.vectorTabs span,div.vectorTabs,div#mw-panel div.portal {
+	background-image:none!important;
+	padding-left:0!important
+}
+
+.mw-body h1, .mw-body h2 {
+	font-family:"RobotoSlab"!important
+}
+
+#siteSub {
+	font-size:0
+}
+
+#siteSub:after {
+	font-size:14px;
+	content:"Wikipedia, the free encyclopedia"
+}
+
+.navbox th, .navbox-title,div#simpleSearch {
+	background:#fff!important
+}
+
+.navbox {
+	border:0
+}
+
+div#simpleSearch #searchInput {
+	-webkit-appearance:none!important
+}
+
+div#simpleSearch {
+	border:0;
+}
+
+div.thumbinner {
+	border:0;
+	background:transparent
+}
+
+.mw-content-ltr div.magnify a {
+	background-image:none
+}
+
+.navbox-even {
+	background:transparent!important
+}
+
+table.plainlinks[style="border:1px solid #aaa;background-color:#f9f9f9"] {
+	border:0!important;
+	background-color:transparent!important
+}
+
+.mw-body .external {
+	background-image:none
+}
+
+.portal[style="margin:0.5em 0 0.5em 1em;border:solid #aaa 1px"] {
+	border:0!important;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	padding:5px;
+}
+
+.portal[style="margin:0.5em 0 0.5em 1em;border:solid #aaa 1px"]>ul {
+	background:transparent!important
+}
+
+.mw-body .external:after {
+	font-family:"Material";
+	content:"\e89e";
+	padding-left:6px;
+	height:100%;
+	font-size:14px;
+	vertical-align:middle
+}
+
+.mw-cite-backlink a {
+	font-size:0;
+}
+
+
+.mw-cite-backlink a:after {
+	font-size:16px;
+	content:"\e5d8";
+	font-family:"Material";
+	vertical-align:middle;
+	padding-right:8px;
+	height:100%;
+}
+
+.citation {
+	vertical-align:middle
 }
