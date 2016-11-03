@@ -1,5 +1,5 @@
 * {
-  font-family:Roboto
+  font-family:Roboto,Helvetica,Verdana,sans-serif;
 }
 
 a,.mw-body a.external,div#mw-panel div.portal div.body ul li a,.mw-body a.extiw, .mw-body a.extiw:active {
@@ -74,7 +74,7 @@ h1,h2,h3,h4,h5,h6 {
   font-weight:400
 }
 
-.catlinks {
+.catlinks,table.fmbox,.template-documentation {
   border:0!important
 }
 
@@ -82,8 +82,8 @@ h1,h2,h3,h4,h5,h6 {
   border-left:0
 }
 
-#toc, .toc, .mw-warning, .toccolours {
-  border:0;
+#toc, .toc, .mw-warning, .toccolours, .plainlist[role="note"] {
+  border:0!important;
   box-shadow:0 3px 8px rgba(0,0,0,0.5);
   background:#fff
 }
@@ -245,3 +245,91 @@ table.plainlinks[style="border:1px solid #aaa;background-color:#f9f9f9"] {
 .citation {
 	vertical-align:middle
 }
+
+table.ombox-content,table.ambox-content {
+  color:#fff;
+  background:#FF9800;
+  border:0
+}
+
+table.ombox-content a,table.ambox-content a {
+  color:#fff!important;
+  opacity:0.7
+}
+
+.mbox-image>img[src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png"] {
+  box-sizing:border-box;
+  padding-left:40px;
+}
+
+.mbox-image>img[src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png"]:after {
+  font-family:"Material";
+  content:"\e002"
+}
+
+#mp-topbanner {
+	background:transparent!important;
+	border:0!important;
+	box-shadow:none!important
+}
+
+#mp-topbanner>tbody>tr {
+	box-shadow:none
+}
+
+#mp-itn-h2,#mp-tfa-h2,#mp-dyk-h2,#mp-otd-h2,#mp-tfp-h2,.MainPageBG {
+  background:transparent!important;
+  border:0!important
+}
+
+a[href="/wiki/File:Essay.svg"],a[href="/wiki/File:Question_book-new.svg"] {
+  opacity:1!important
+}
+
+a[href="/wiki/File:Essay.svg"]>img,a[href="/wiki/File:Question_book-new.svg"]>img {
+  display:none!important
+}
+
+a[href="/wiki/File:Essay.svg"]:after,a[href="/wiki/File:Question_book-new.svg"]:after {
+  font-family:"Material";
+  color:#fff;
+  font-size:36px
+}
+
+a[href="/wiki/File:Question_book-new.svg"]:after {
+  content:"\e52d"
+}
+
+a[href="/wiki/File:Essay.svg"]:after {
+  content:"\e24d";
+  color:#000
+}
+
+.mw-redirectedfrom {
+  font-size:0
+}
+
+.mw-redirectedfrom a:before {
+  font-family:"Material";
+  content:"\e157";
+  vertical-align: middle;
+  margin-bottom: 2px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.mw-redirectedfrom a {
+  font-size:16px;
+  vertical-align:middle
+}
+
+table.ombox-notice {
+  background:#fff;
+  border:0
+}
+
+/*img[src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Walnut.png/30px-Walnut.png"] {
+  box-sizing:bord/*er-box;
+  padding-top:30px;
+  overflow:hidden
+}*/

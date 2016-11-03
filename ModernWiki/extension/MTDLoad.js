@@ -4,10 +4,7 @@
 "use strict";
 console.log("MTDLoad 6.0");
 
-var isDev = true;
-var isChromium = typeof chrome !== "undefined"; // NOTE TO SELF: This probably triggers on Microsoft Edge but idk
-var storage = {};
-var app,BrowserWindow,mainWindow,isFirefox,isSafari;
+var isDev = true, isChromium = typeof chrome !== "undefined", storage = {}, app,BrowserWindow,mainWindow,isFirefox,isSafari;
 
 function InjectDevStyles() {
   console.log("*boops your nose* hey there developer :3");
@@ -43,7 +40,12 @@ if ((typeof localStorage.mtd_stylesheet_dev_mode !== "undefined" && localStorage
 }
 
 console.log("Bootstrapping MTDinject");
+
+var jQueryScr = document.createElement("script");
 var InjectScript = document.createElement("script");
+
+jQueryScr.type = "text/javascript";
+InjectScript.type = "text/javascript";
 
 function MTDURLExchange(url) {
   var injurl = document.createElement("div");
@@ -56,15 +58,18 @@ function MTDURLExchange(url) {
 if (isChromium) {
   MTDURLExchange(chrome.extension.getURL(""));
   InjectScript.src = chrome.extension.getURL("sources/MTDinject.js");
+  jQueryScr.src = chrome.extension.getURL("sources/libraries/jquery.min.js");
 } else if (isSafari) {
   MTDURLExchange(safari.extension.baseURI + "/");
   InjectScript.src = safari.extension.baseURI + "sources/MTDinject.js";
+  jQueryScr.src = safari.extension.baseURI + "sources/libraries/jquery.min.js";
 } else {
   MTDURLExchange(self.options.ffMTDURLExchange);
   InjectScript.src = self.options.ffMTDURLExchange + "sources/MTDinject.js";
+  jQueryScr.src = self.options.ffMTDURLExchange + "sources/libraries/jquery.min.js";
 }
 
-InjectScript.type = "text/javascript";
+document.head.appendChild(jQueryScr);
 document.head.appendChild(InjectScript);
 
 chrome.runtime.sendMessage("getStorage");
